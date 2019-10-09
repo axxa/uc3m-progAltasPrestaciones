@@ -3,4 +3,4 @@ project(practica1Matriz)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(practica1Matriz vector.cpp main.cpp)
+add_executable(practica1Matriz matrix.cpp main.cpp)

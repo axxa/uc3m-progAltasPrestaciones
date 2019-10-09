@@ -6,17 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/axxa/CLionProjects/practica1Matriz/main.cpp
-vector.h
-/home/axxa/CLionProjects/practica1Matriz/vector.h
+/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/main.cpp
+matrix.h
+/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/matrix.h
 iostream
 -
 
-/home/axxa/CLionProjects/practica1Matriz/vector.cpp
-vector.h
-/home/axxa/CLionProjects/practica1Matriz/vector.h
+/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/matrix.cpp
+matrix.h
+/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/matrix.h
+algorithm
+-
 
-/home/axxa/CLionProjects/practica1Matriz/vector.h
+/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/matrix.h
 iostream
 -
 

@@ -1,3 +1,3 @@
-/home/axxa/CLionProjects/practica1Matriz/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/axxa/CLionProjects/practica1Matriz/cmake-build-debug/CMakeFiles/practica1Matriz.dir
-/home/axxa/CLionProjects/practica1Matriz/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug/CMakeFiles/practica1Matriz.dir
+/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug/CMakeFiles/edit_cache.dir

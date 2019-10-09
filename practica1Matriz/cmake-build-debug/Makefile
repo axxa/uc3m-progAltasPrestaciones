@@ -48,10 +48,10 @@ RM = /snap/clion/85/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/axxa/CLionProjects/practica1Matriz
+CMAKE_SOURCE_DIR = /home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/axxa/CLionProjects/practica1Matriz/cmake-build-debug
+CMAKE_BINARY_DIR = /home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/axxa/CLionProjects/practica1Matriz/cmake-build-debug/CMakeFiles /home/axxa/CLionProjects/practica1Matriz/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug/CMakeFiles /home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/axxa/CLionProjects/practica1Matriz/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,32 +150,32 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/practica1Matriz.dir/build.make CMakeFiles/practica1Matriz.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-vector.o: vector.cpp.o
+matrix.o: matrix.cpp.o
 
-.PHONY : vector.o
+.PHONY : matrix.o
 
 # target to build an object file
-vector.cpp.o:
-	$(MAKE) -f CMakeFiles/practica1Matriz.dir/build.make CMakeFiles/practica1Matriz.dir/vector.cpp.o
-.PHONY : vector.cpp.o
+matrix.cpp.o:
+	$(MAKE) -f CMakeFiles/practica1Matriz.dir/build.make CMakeFiles/practica1Matriz.dir/matrix.cpp.o
+.PHONY : matrix.cpp.o
 
-vector.i: vector.cpp.i
+matrix.i: matrix.cpp.i
 
-.PHONY : vector.i
+.PHONY : matrix.i
 
 # target to preprocess a source file
-vector.cpp.i:
-	$(MAKE) -f CMakeFiles/practica1Matriz.dir/build.make CMakeFiles/practica1Matriz.dir/vector.cpp.i
-.PHONY : vector.cpp.i
+matrix.cpp.i:
+	$(MAKE) -f CMakeFiles/practica1Matriz.dir/build.make CMakeFiles/practica1Matriz.dir/matrix.cpp.i
+.PHONY : matrix.cpp.i
 
-vector.s: vector.cpp.s
+matrix.s: matrix.cpp.s
 
-.PHONY : vector.s
+.PHONY : matrix.s
 
 # target to generate assembly for a file
-vector.cpp.s:
-	$(MAKE) -f CMakeFiles/practica1Matriz.dir/build.make CMakeFiles/practica1Matriz.dir/vector.cpp.s
-.PHONY : vector.cpp.s
+matrix.cpp.s:
+	$(MAKE) -f CMakeFiles/practica1Matriz.dir/build.make CMakeFiles/practica1Matriz.dir/matrix.cpp.s
+.PHONY : matrix.cpp.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... vector.o"
-	@echo "... vector.i"
-	@echo "... vector.s"
+	@echo "... matrix.o"
+	@echo "... matrix.i"
+	@echo "... matrix.s"
 .PHONY : help
 
 

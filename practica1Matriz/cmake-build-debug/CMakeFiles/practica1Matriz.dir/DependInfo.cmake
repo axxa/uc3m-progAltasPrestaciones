@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/axxa/CLionProjects/practica1Matriz/main.cpp" "/home/axxa/CLionProjects/practica1Matriz/cmake-build-debug/CMakeFiles/practica1Matriz.dir/main.cpp.o"
-  "/home/axxa/CLionProjects/practica1Matriz/vector.cpp" "/home/axxa/CLionProjects/practica1Matriz/cmake-build-debug/CMakeFiles/practica1Matriz.dir/vector.cpp.o"
+  "/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/main.cpp" "/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug/CMakeFiles/practica1Matriz.dir/main.cpp.o"
+  "/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/matrix.cpp" "/home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug/CMakeFiles/practica1Matriz.dir/matrix.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
