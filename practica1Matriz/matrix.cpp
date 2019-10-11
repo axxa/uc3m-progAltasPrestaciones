@@ -29,13 +29,16 @@ double * matrix::getBuffer() const {
     return buffer_;
 }
 
-matrix & matrix::operator=(const matrix & m)
-{
-    double * aux = new double[m.getSize()];
-    std::copy(m.buffer_, m.buffer_+m.getSize(), aux);
-    delete [] buffer_;
 
+matrix & matrix::operator=(const matrix & v)
+{
+    double * aux = new double[v.getSize()];
+    std::copy(v.buffer_, v.buffer_+v.getSize(), aux);
+    delete [] buffer_;
+    rows_ = v.getRows();
+    cols_ = v.getCols();
     buffer_ = aux;
+
     return *this;
 }
 

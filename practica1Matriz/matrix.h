@@ -23,7 +23,7 @@ class matrix {
             std::copy(m.getBuffer(), m.getBuffer() + m.getSize(), m.getBuffer());
         }
             //asignacion copia
-        matrix & operator=(const matrix & v);
+            matrix & operator=(const matrix & v);
         //-------------------------------------------------------
         //4. Destructor que debe liberar la memoria que pueda ser propiedad de la matriz.
         ~matrix() { delete []buffer_; }
@@ -44,7 +44,9 @@ class matrix {
         int getRows() const;
         int getCols() const;
         int getSize() const;
+
         double * getBuffer() const;
+        double * setBuffer();
         double get(int i, int j) const { return buffer_[i * cols_ + j]; }
         double get(int pos) const { return buffer_[pos]; }
         void set(int i, int j, double x) { buffer_[i * cols_ + j] = x; }

@@ -3,6 +3,36 @@
 
 using namespace std;
 
+void pruebaAsignacionCopia(){
+    matrix m;
+    matrix m2{4,4};
+    matrix m3{4,4};
+    m2.set(0,0, 1);
+    m2.set(0,1, 2);
+    m2.set(0,2, 3);
+    m2.set(0,3, 4);
+    m2.set(1,0, 5);
+    m2.set(1,1, 6);
+    m2.set(1,2, 7);
+    m2.set(1,3, 8);
+    m2.set(2,0, 9);
+    m2.set(2,1, 10);
+    m2.set(2,2, 11);
+    m2.set(2,3, 12);
+    m2.set(3,0, 13);
+    m2.set(3,1, 14);
+    m2.set(3,2, 15);
+    m2.set(3,3, 16);
+
+    cout << "Matriz m nula inicialmente :" << m << "\n";
+    m = m2;
+    cout << "Matriz m2 copiada en m :" << m << "\n";
+
+    cout << "Matriz m3 inicializada con 0s :" << m3 << "\n";
+    m3 = m2;
+    cout << "Matriz m2 copiada en m3 :" << m3 << "\n";
+
+}
 void pruebaSumaMatriz(){
     matrix m{4,4};
     matrix m2{4,4};
@@ -58,7 +88,8 @@ int main() {
 
     //pruebaSumaMatriz();
     //pruebaMultiplicacionMatrix();
-    pruebaParentesis();
+    //pruebaParentesis();
+    //pruebaAsignacionCopia();
     return 0;
 }
 
