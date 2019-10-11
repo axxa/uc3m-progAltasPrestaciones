@@ -67,6 +67,7 @@
       <workItem from="1570520923149" duration="1399000" />
       <workItem from="1570543352369" duration="1593000" />
       <workItem from="1570610689161" duration="11323000" />
+      <workItem from="1570785641851" duration="15683000" />
     </task>
     <servers />
   </component>
@@ -85,5 +86,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/matrix.cpp</url>
+          <line>55</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
