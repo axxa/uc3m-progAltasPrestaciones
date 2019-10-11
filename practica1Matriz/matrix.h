@@ -22,15 +22,20 @@ class matrix {
         buffer_{new double[m.getRows() * m.getCols()]} {
             std::copy(m.getBuffer(), m.getBuffer() + m.getSize(), m.getBuffer());
         }
+            //asignacion copia
+        matrix & operator=(const matrix & v);
         //-------------------------------------------------------
         //4. Destructor que debe liberar la memoria que pueda ser propiedad de la matriz.
-        ~matrix() { delete buffer_; }
+        ~matrix() { delete []buffer_; }
         //-------------------------------------------------------
         //5. El operador paréntesis se sobrecargará con dos argumentos para acceder a una
         //posición de la matriz
+        double operator()(int i, int j) const { return buffer_[i * cols_ + j]; }
         //-------------------------------------------------------
         //6. Los operadores + y * se sobrecargarán para implementar la suma y el producto de
         //matrices.
+        matrix & operator+(matrix && m);
+        matrix & operator*(matrix && m);
         //-------------------------------------------------------
 
 
@@ -41,7 +46,9 @@ class matrix {
         int getSize() const;
         double * getBuffer() const;
         double get(int i, int j) const { return buffer_[i * cols_ + j]; }
+        double get(int pos) const { return buffer_[pos]; }
         void set(int i, int j, double x) { buffer_[i * cols_ + j] = x; }
+        void set(int pos, double x) { buffer_[pos] = x; }
 
 
     private:
