@@ -35,10 +35,8 @@ class matrix {
         //6. Los operadores + y * se sobrecargarán para implementar la suma y el producto de
         //matrices.
         matrix & operator+(matrix && m);
-        matrix & operator*(matrix && m);
+        matrix & operator*(matrix && multiplierM);
         //-------------------------------------------------------
-
-
 
 
         int getRows() const;

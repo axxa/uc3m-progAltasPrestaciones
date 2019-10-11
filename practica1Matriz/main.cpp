@@ -69,25 +69,46 @@ void pruebaMultiplicacionMatrix(){
     m2.set(1,0, 1);m2.set(1,1, 1);m2.set(1,2, 4);
     m2.set(2,0, 2);m2.set(2,1, 1);m2.set(2,2, 4);
 
-    cout << "Multiplicacion de matriz" << "\n" << m  << "\n   *" << m2 << "\n   =";
+    cout << "Multiplicacion de matriz" << "\n" << m  << "\n   *" << m2 << "\n   =  \n";
 
     m3 = m * static_cast<matrix &&>(m2);
 
-    //cout << (m * static_cast<matrix &&>(m2)) << std::endl;
+    cout << "m3\n"<< m3 << "\n" <<std::endl;
 }
 
 //5. Sobrecarga con parentesis
 void pruebaParentesis(){
+
     matrix m{2,3};
+    matrix m2{3,3};
+
     m.set(0,0, 2);m.set(0,1, 3);m.set(0,2, 1);
     m.set(1,0, 2);m.set(1,1, -7);m.set(1,2, 4);
-    cout << "m(0,1) : " <<m(0,1) ;
+
+    m2.set(0,0, 3);m2.set(0,1, 4);m2.set(0,2, 5);
+    m2.set(1,0, 1);m2.set(1,1, 1);m2.set(1,2, 4);
+    m2.set(2,0, 2);m2.set(2,1, 1);m2.set(2,2, 4);
+
+    cout << "m (0,0)== 2 : " <<(m(0,0) == 2 ) << "\n";
+    cout << "m2(0,0)== 3 : " <<(m2(0,0) == 3 )<< "\n";
+    cout << "m (0,1)== 3 : " <<(m(0,1) == 3 )<< "\n";
+    cout << "m2(1,0)== 1 : " <<(m2(1,0) == 1 )<< "\n";
+    cout << "m (0,2)== 1 : " <<(m(0,2) == 1 )<< "\n";
+    cout << "m2(2,0)== 2 : " <<(m2(2,0) == 2 )<< "\n";
+
+    cout << "m2(0,1)== 4 : " <<(m2(0,1) == 4 )<< "\n";
+    cout << "m2(1,1)== 1 : " <<(m2(1,1) == 1 )<< "\n";
+    cout << "m2(2,1)== 4 : " <<(m2(2,1) == 1 )<< "\n";
+
+    cout << "m2(0,2)== 5 : " <<(m2(0,2) == 5 )<< "\n";
+    cout << "m2(1,2)== 4 : " <<(m2(1,2) == 4 )<< "\n";
+    cout << "m2(2,2)== 4 : " <<(m2(2,2) == 4 )<< "\n";
 }
 
 int main() {
 
     //pruebaSumaMatriz();
-    //pruebaMultiplicacionMatrix();
+    pruebaMultiplicacionMatrix();
     //pruebaParentesis();
     //pruebaAsignacionCopia();
     return 0;
