@@ -13,6 +13,12 @@ matrix::matrix(int i, int j) :
 {
 }
 
+matrix & matrix::operator=(matrix && m) {
+    std::swap(rows_, m.rows_);
+    std::swap(buffer_, m.buffer_);
+    return *this;
+}
+
 int matrix::getRows() const {
     return rows_;
 }
