@@ -23,7 +23,17 @@ class matrix {
             std::copy(m.getBuffer(), m.getBuffer() + m.getSize(), m.getBuffer());
         }
             //asignacion copia
-            matrix & operator=(const matrix & v);
+        matrix & operator=(const matrix & v);
+
+            //contructor movimiento
+        matrix(matrix && m) :
+            rows_{m.getRows()},
+            cols_{m.getCols()}
+        {
+            m.buffer_ = nullptr;
+        }
+            //asignacion movimiento
+        matrix & operator=(matrix && m);
         //-------------------------------------------------------
         //4. Destructor que debe liberar la memoria que pueda ser propiedad de la matriz.
         ~matrix() { delete []buffer_; }
@@ -35,7 +45,7 @@ class matrix {
         //6. Los operadores + y * se sobrecargarán para implementar la suma y el producto de
         //matrices.
         matrix & operator+(matrix && m);
-        matrix & operator*(matrix && multiplierM);
+        matrix & operator*(matrix && multiplierM);//TODO:not working
         //-------------------------------------------------------
 
 
