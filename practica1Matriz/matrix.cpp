@@ -69,7 +69,6 @@ matrix & matrix::operator*(matrix && m)
 
         for (int i = 0; i < getSize(); i++) {
             //k = i / aux.cols_ ;
-            k = i / aux.cols_ ;
             zIni = k * aux.cols_;
             z = zIni;
 
@@ -79,10 +78,11 @@ matrix & matrix::operator*(matrix && m)
             }
 
             for (int j = 0; j < m.getSize(); j++) {
-                std::cout << "\naux.get(" << z <<")=" << aux.get(z) << "\n";
-                std::cout << "get(" <<i<< ")" << "*" << "m.get("<<j<<")" << "=" << get(i) << "*" << m.get(j) <<"\n" ;
+                if(j==0)k++;
+                //std::cout << "\naux.get(" << z <<")=" << aux.get(z) << "\n";
+                //std::cout << "get(" <<i<< ")" << "*" << "m.get("<<j<<")" << "=" << get(i) << "*" << m.get(j) <<"\n" ;
                 aux.set(z, aux.get(z) + get(i) * m.get(j));
-                std::cout << "aux.get(" << z <<")=" << aux.get(z) << "\n";
+                //std::cout << "aux.get(" << z <<")=" << aux.get(z) << "\n";
                 z++;
 
                 if((j+1) % aux.cols_ == 0 ){
