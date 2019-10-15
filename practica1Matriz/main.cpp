@@ -76,6 +76,43 @@ void pruebaMultiplicacionMatrix(){
     cout << "m3\n"<< m3 << "\n" <<std::endl;
 }
 
+void pruebaMultiplicacionMatrix2(){
+    matrix m{3,3};
+    matrix m2{3,3};
+    matrix m3;
+    m.set(0,0, 2);m.set(0,1, 3);m.set(0,2, 1);
+    m.set(1,0, 2);m.set(1,1, -7);m.set(1,2, 4);
+    m.set(2,0, 2);m.set(2,1, 1);m.set(2,2, 4);
+
+    m2.set(0,0, 3);m2.set(0,1, 4);m2.set(0,2, 5);
+    m2.set(1,0, 1);m2.set(1,1, 1);m2.set(1,2, 4);
+    m2.set(2,0, 2);m2.set(2,1, 1);m2.set(2,2, 4);
+
+    cout << "Multiplicacion de matriz" << "\n" << m  << "\n   *" << m2 << "\n   =  \n";
+
+    m3 = m * static_cast<matrix &&>(m2);
+
+    cout << "m3\n"<< m3 << "\n" <<std::endl;
+}
+
+void pruebaMultiplicacionMatrix3(){
+    matrix m{3,3};
+    matrix m2{3,1};
+    matrix m3;
+    m.set(0,0, 5);m.set(0,1, 8);m.set(0,2, -4);
+    m.set(1,0, 6);m.set(1,1, 9);m.set(1,2, -5);
+    m.set(2,0, 4);m.set(2,1, 7);m.set(2,2, -2);
+
+    m2.set(0,0, 2);m2.set(0,1, -3);m2.set(0,2, 1);
+
+
+    cout << "Multiplicacion de matriz" << "\n" << m  << "\n   *" << m2 << "\n   =  \n";
+
+    m3 = m * static_cast<matrix &&>(m2);
+
+    cout << "m3\n"<< m3 << "\n" <<std::endl;
+}
+
 //5. Sobrecarga con parentesis
 void pruebaParentesis(){
 
@@ -108,7 +145,7 @@ void pruebaParentesis(){
 int main() {
 
     //pruebaSumaMatriz();
-    pruebaMultiplicacionMatrix();
+    pruebaMultiplicacionMatrix3();
     //pruebaParentesis();
     //pruebaAsignacionCopia();
     return 0;

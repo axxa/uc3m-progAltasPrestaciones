@@ -62,25 +62,42 @@ matrix & matrix::operator*(matrix && m)
 {
 
     if(cols_ == m.getRows()) {
-        matrix aux{rows_, m.cols_};
+        matrix aux{rows_,m.getCols()}; //tamanio de la nueva matriz :2x3 * 3X3 = 2X3
+        int z = 0;
+        int zIni = 0;
+        int k=0;
 
-        for(int i = 0; i < rows_; i++) {
-            for (int j = 0; j < m.getCols(); j++) {
-                for (int k = 0; k < cols_; k++) {
-                    std::cout << "aux(i,j) + (i,k) * m(k,j) = " << aux(i,j) << "+"<<(i,k) << "*"<< m(k,j)  << "\n";
+        for (int i = 0; i < getSize(); i++) {
+            //k = i / aux.cols_ ;
+            k = i / aux.cols_ ;
+            zIni = k * aux.cols_;
+            z = zIni;
 
-                    aux.set(i,j, aux(i,j) + (i,k) * m(k,j));
+            if((i-1) % aux.cols_ == 0){
+                z = zIni;
+                i = z;
+            }
 
+            for (int j = 0; j < m.getSize(); j++) {
+                std::cout << "\naux.get(" << z <<")=" << aux.get(z) << "\n";
+                std::cout << "get(" <<i<< ")" << "*" << "m.get("<<j<<")" << "=" << get(i) << "*" << m.get(j) <<"\n" ;
+                aux.set(z, aux.get(z) + get(i) * m.get(j));
+                std::cout << "aux.get(" << z <<")=" << aux.get(z) << "\n";
+                z++;
+
+                if((j+1) % aux.cols_ == 0 ){
+                    i++;
+                    z = zIni;
                 }
             }
         }
-
-
         *this = aux;
     }
 
     return *this;
+
 }
+
 std::ostream & operator<<(std::ostream & fs, const matrix & m) {
     for (int i=0; i<m.getRows(); ++i) {
         fs << "\n" ;
