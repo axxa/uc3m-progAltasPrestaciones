@@ -113,8 +113,8 @@ std::istream & operator>>(std::istream & fe, matrix & m) {
     int j=0;
     double x;
     while ((i+j<m.getSize() ) && (fe >> x)) {
-        if(!j < m.getCols()){
-            i = i++;
+        if(!(j < m.getCols())){
+            i++;
         }
         m.set(i,j++, x);
     }
