@@ -60,12 +60,10 @@ class matrix {
         void set(int i, int j, double x) { buffer_[i * cols_ + j] = x; }
         void set(int pos, double x) { buffer_[pos] = x; }
 
-
     private:
         int rows_;
         int cols_;
         double * buffer_;
-
 
 
 };

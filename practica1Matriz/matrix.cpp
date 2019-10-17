@@ -6,13 +6,12 @@
 #include <algorithm> // std::copy
 #include <iostream>
 
+
 matrix::matrix(int i, int j) :
         rows_{(i>0)?(i):0},
         cols_{(j>0)?(j):0},
-        buffer_{((i==0) && (j==0))?(nullptr):new double[i*j]{}} // Inicia todos a 0.0
-{
-}
-
+        buffer_{((i==0) && (j==0))?(nullptr):new double[i*j]{}}  // Inicia todos a 0.0
+{}
 matrix & matrix::operator=(matrix && m) {
     std::swap(rows_, m.rows_);
     std::swap(buffer_, m.buffer_);
@@ -58,9 +57,8 @@ matrix & matrix::operator+(matrix && m)
 
 }
 
-matrix & matrix::operator*(matrix && m)
+matrix & matrix::operator*( matrix && m)
 {
-
     if(cols_ == m.getRows()) {
         matrix aux{rows_,m.getCols()}; //tamanio de la nueva matriz :2x3 * 3X3 = 2X3
         int z = 0;
@@ -113,7 +111,7 @@ std::istream & operator>>(std::istream & fe, matrix & m) {
     int j=0;
     double x;
     while ((i+j<m.getSize() ) && (fe >> x)) {
-        if(!(j < m.getCols())){
+        if(j >= m.getCols()){
             i++;
         }
         m.set(i,j++, x);
