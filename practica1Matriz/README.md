@@ -8,5 +8,5 @@ Los resultados de todas las practicas se encuentran en /doc
 
 ## Integrantes
 
-	Adrian Hernandez
-	Álvaro Suárez
+Adrian Hernandez
+Álvaro Suárez
