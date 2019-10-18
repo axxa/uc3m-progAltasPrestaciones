@@ -11,11 +11,21 @@ matrix::matrix(int i, int j) :
         rows_{(i>0)?(i):0},
         cols_{(j>0)?(j):0},
         buffer_{((i==0) && (j==0))?(nullptr):new double[i*j]{}}  // Inicia todos a 0.0
-{}
-matrix & matrix::operator=(matrix && m) {
-    std::swap(rows_, m.rows_);
-    std::swap(buffer_, m.buffer_);
-    return *this;
+{
+    std::cout<< "CONSTRUCTOR POR DEFECTO" << "\n";
+}
+
+matrix::matrix(const matrix & v)
+{
+    std::cout<< "CONSTRUCTOR DE COPIA" << "\n";
+
+    double * aux = new double[v.getSize()];
+    std::copy(v.buffer_, v.buffer_+v.getSize(), aux);
+    delete [] buffer_;
+    rows_ = v.getRows();
+    cols_ = v.getCols();
+    buffer_ = aux;
+
 }
 
 int matrix::getRows() const {
@@ -37,6 +47,7 @@ double * matrix::getBuffer() const {
 
 matrix & matrix::operator=(const matrix & v)
 {
+    std::cout<< "OPERADOR DE COPIA" << "\n";
     double * aux = new double[v.getSize()];
     std::copy(v.buffer_, v.buffer_+v.getSize(), aux);
     delete [] buffer_;
@@ -47,7 +58,22 @@ matrix & matrix::operator=(const matrix & v)
     return *this;
 }
 
-matrix & matrix::operator+(matrix && m)
+matrix & matrix::operator=(const matrix && m)
+{
+    std::cout<< "OPERADOR DE MOVIMIENTO" << "\n";
+    if (this != &m)
+    {
+        delete [] buffer_;
+        rows_ = m.rows_;
+        cols_ = m.cols_;
+        buffer_ = m.buffer_;
+
+    }
+
+    return *this;
+}
+
+matrix & matrix::operator+(const matrix & m)
 {
     if(rows_ == m.getRows() && cols_ == m.getCols())
         for(int i = 0 ; i < m.getSize() ; i++){
@@ -57,16 +83,15 @@ matrix & matrix::operator+(matrix && m)
 
 }
 
-matrix & matrix::operator*( matrix && m)
+matrix & matrix::operator*(const  matrix & m)
 {
     if(cols_ == m.getRows()) {
-        matrix aux{rows_,m.getCols()}; //tamanio de la nueva matriz :2x3 * 3X3 = 2X3
+        matrix aux{rows_,m.getCols()};
         int z = 0;
         int zIni = 0;
         int k=0;
 
         for (int i = 0; i < getSize(); i++) {
-            //k = i / aux.cols_ ;
             zIni = k * aux.cols_;
             z = zIni;
 
@@ -77,10 +102,7 @@ matrix & matrix::operator*( matrix && m)
 
             for (int j = 0; j < m.getSize(); j++) {
                 if(j==0)k++;
-                //std::cout << "\naux.get(" << z <<")=" << aux.get(z) << "\n";
-                //std::cout << "get(" <<i<< ")" << "*" << "m.get("<<j<<")" << "=" << get(i) << "*" << m.get(j) <<"\n" ;
                 aux.set(z, aux.get(z) + get(i) * m.get(j));
-                //std::cout << "aux.get(" << z <<")=" << aux.get(z) << "\n";
                 z++;
 
                 if((j+1) % aux.cols_ == 0 ){

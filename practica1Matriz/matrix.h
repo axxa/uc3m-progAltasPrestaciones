@@ -8,6 +8,7 @@
 
 class matrix {
     public:
+
         //1. Constructor a partir de número de filas y columnas
         //2. Constructor por defecto. Se crea una matriz de cero filas y cero columnas que no
         //consume memoria dinámica
@@ -16,24 +17,23 @@ class matrix {
         //-------------------------------------------------------
         //3. Debe soportar operaciones de copia y movimiento.
             //constructor copia
-        matrix(const matrix & m):
-        rows_{m.getRows()},
-        cols_{m.getCols()},
-        buffer_{new double[m.getRows() * m.getCols()]} {
-            std::copy(m.getBuffer(), m.getBuffer() + m.getSize(), m.getBuffer());
-        }
+        matrix(const matrix & v);
             //asignacion copia
         matrix & operator=(const matrix & v);
 
             //contructor movimiento
         matrix(matrix && m) :
+            buffer_{m.buffer_},
             rows_{m.getRows()},
             cols_{m.getCols()}
         {
+            std::cout<< "CONSTRUCTOR DE MOVIMIENTO" << "\n";
             m.buffer_ = nullptr;
+            m.rows_ = 0;
+            m.cols_ = 0;
         }
             //asignacion movimiento
-        matrix & operator=(matrix && m);
+            matrix & operator=(const matrix && m);
         //-------------------------------------------------------
         //4. Destructor que debe liberar la memoria que pueda ser propiedad de la matriz.
         ~matrix() { delete []buffer_; }
@@ -44,8 +44,8 @@ class matrix {
         //-------------------------------------------------------
         //6. Los operadores + y * se sobrecargarán para implementar la suma y el producto de
         //matrices.
-        matrix & operator+(matrix && m);
-        matrix & operator*(matrix && multiplierM);//TODO:not working
+        matrix & operator+(const matrix & m);
+        matrix & operator*(const matrix & multiplierM);
         //-------------------------------------------------------
 
 

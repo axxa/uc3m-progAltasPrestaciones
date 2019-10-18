@@ -3,7 +3,9 @@
 #include <random>
 #include <chrono>
 using namespace std;
+
 int n = 100;
+
 void evaluacion(){
     matrix a{n,n};
     matrix b{n,n};
@@ -21,7 +23,7 @@ void evaluacion(){
     }
     matrix d{n,n};
     auto start = chrono::high_resolution_clock::now();
-    d = a + static_cast<matrix &&>(b * static_cast<matrix &&>(c));
+    d = a + b * c;
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> diff = end-start;
 
@@ -36,8 +38,18 @@ void evaluacion(){
     cout << "\n" << "s = " << s << "\n";
 
 }
+
+void testMovimientoYCopia(){
+    matrix b{1,1}; //por defecto
+    b.set(0,2);
+
+    matrix a{b}; // copia
+
+    matrix c{std::move(b)}; //movimiento
+}
 int main() {
     evaluacion();
+    //testMovimientoYCopia();
     return 0;
 }
 
