@@ -4,7 +4,7 @@
 #include <chrono>
 using namespace std;
 
-int n = 100;
+int n = 1000;
 
 void evaluacion(){
     matrix a{n,n};
