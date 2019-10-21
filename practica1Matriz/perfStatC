@@ -1,2 +1,2 @@
-sudo perf stat /home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug/practica1Matriz
-sudo time /home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-debug/practica1Matrizs
+sudo perf stat /home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-release/practica1Matriz
+sudo time /home/axxa/CLionProjects/uc3m-progAltasPrestaciones/practica1Matriz/cmake-build-release/practica1Matriz
