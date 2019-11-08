@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS_DEBUG "-O3 -g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
-add_executable(practica2MatrizGenerica matrix.cpp main.cpp)
+add_executable(practica2MatrizGenerica main.cpp)
