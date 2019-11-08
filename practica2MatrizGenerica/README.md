@@ -1,6 +1,6 @@
 # Practica matriz
 
-Este es el trabajo para la sesion de matriz de la universidad Carlos III de Madrid
+Este es el trabajo para la sesion de matriz II de la universidad Carlos III de Madrid
     
 ## Resultados
 
