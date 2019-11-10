@@ -15,41 +15,27 @@ void evaluacionRacional(){
     matrix<racional<int>> d{n,n};
     racional<int> s{0,0};
 
-    /*
-    matrix<double> a{n,n};
-    matrix<double> b{n,n};
-    matrix<double> c{n,n};
-    matrix<double> d{n,n};
-    double s{0};
-    */
     std::random_device rd{};
     std::mt19937 gen{rd()};
-    //std::normal_distribution<> dis(10, 2.5);
-    std::normal_distribution<> dis(1, 1);
+    std::normal_distribution<> dis(2, 1);
 
     for (int i = 0; i < a.getSize(); ++i) {
-        /*
-        a.set( i , dis(gen) );
-        b.set( i , dis(gen) );
-        c.set( i , dis(gen) );
-        */
         racional<int> r{static_cast<int>(dis(gen)),static_cast<int>(dis(gen))};
+        cout << r << "\n";
         a.set( i , r );
         b.set( i , r );
         c.set( i , r );
-
     }
 
     auto start = chrono::high_resolution_clock::now();
     d = a + b;
-    cout<< "termina suma";
     d = d * c;
 
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> diff = end-start;
 
     cout << "Tiempo de cálculo de la matriz D = " << diff.count() << endl;
-    /*
+
     for (int i = 0; i < d.getSize(); ++i) {
         s = s + d.get(i);
     }
@@ -57,7 +43,7 @@ void evaluacionRacional(){
     s = s/(d.getSize());
 
     cout << "\n" << "s = " << s << "\n";
-    */
+
 }
 
 void evaluacion(){
@@ -94,27 +80,10 @@ void evaluacion(){
 
 }
 
-void testracional(){
-    racional<int> r{1,3};
-    racional<int> r2{1,6};
-
-    cout << r+ r2;
-
-    racional<int> r3{1,3};
-    racional<int> r4{1,5};
-
-    cout << r3+ r4;
-
-    racional<int> r5{2,5};
-    racional<int> r6{3,4};
-
-    cout << r5 *  r6;
-
-}
 int main() {
     //evaluacion();
     evaluacionRacional();
-    //testracional();
+
     return 0;
 }
 
