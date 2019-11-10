@@ -10,8 +10,8 @@ class racional {
     //Evita que no sean tipos enteros
 
     public:
-        racional() : numerador{0},denominador{0}{}
-        explicit racional(int, int);
+        racional() : numerador{0},denominador{1}{}
+        explicit racional(int,int);
         racional & operator+(const racional & m);
         racional & operator*(const racional & m);
         racional & operator/(const racional & m);
@@ -67,12 +67,10 @@ racional<T> & racional<T>::operator+(const racional<T> & r)
 template <typename T>
 racional<T> & racional<T>::operator*(const racional<T> & r)
 {
-    // Finding gcd of den1 and den2
+    std::cout<< "multi\n";
     int den3 = denominador * r.denominador;
     int num3 = numerador * r.numerador;
 
-    // Calling function to convert final fraction
-    // into it's simplest form
     reduceFraction(den3,num3);
 
     numerador = num3;
@@ -108,7 +106,7 @@ racional<T>::racional(int numeradorP, int denominadorP) :
         denominador{(denominadorP==0)?(1):denominadorP}
 
 {
-    std::cout<< "CONSTRUCTOR POR DEFECTO RACIONAL" << "\n";
+    //std::cout<< "CONSTRUCTOR POR DEFECTO RACIONAL" << "\n";
 }
 
 template <typename T>

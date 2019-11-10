@@ -5,38 +5,51 @@
 #include <chrono>
 using namespace std;
 
-int n = 10;
+int n = 1000;
 
 void evaluacionRacional(){
+
     matrix<racional<int>> a{n,n};
     matrix<racional<int>> b{n,n};
     matrix<racional<int>> c{n,n};
     matrix<racional<int>> d{n,n};
     racional<int> s{0,0};
 
+    /*
+    matrix<double> a{n,n};
+    matrix<double> b{n,n};
+    matrix<double> c{n,n};
+    matrix<double> d{n,n};
+    double s{0};
+    */
     std::random_device rd{};
     std::mt19937 gen{rd()};
-    std::normal_distribution<> dis(10, 2.5);
+    //std::normal_distribution<> dis(10, 2.5);
+    std::normal_distribution<> dis(1, 1);
 
     for (int i = 0; i < a.getSize(); ++i) {
-
+        /*
+        a.set( i , dis(gen) );
+        b.set( i , dis(gen) );
+        c.set( i , dis(gen) );
+        */
         racional<int> r{static_cast<int>(dis(gen)),static_cast<int>(dis(gen))};
-        //a.set( i , dis(gen) );
-        //b.set( i , dis(gen) );
-        //c.set( i , dis(gen) );
-
         a.set( i , r );
         b.set( i , r );
         c.set( i , r );
+
     }
 
     auto start = chrono::high_resolution_clock::now();
-    d = a + b * c;
+    d = a + b;
+    cout<< "termina suma";
+    d = d * c;
+
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> diff = end-start;
 
     cout << "Tiempo de cálculo de la matriz D = " << diff.count() << endl;
-
+    /*
     for (int i = 0; i < d.getSize(); ++i) {
         s = s + d.get(i);
     }
@@ -44,7 +57,7 @@ void evaluacionRacional(){
     s = s/(d.getSize());
 
     cout << "\n" << "s = " << s << "\n";
-
+    */
 }
 
 void evaluacion(){

@@ -82,7 +82,7 @@ matrix<T>::matrix(int i, int j) :
         cols_{(j>0)?(j):0},
         buffer_{((i==0) && (j==0))?(nullptr):new T[i*j]{}}  // Inicia todos a 0.0
 {
-    std::cout<< "CONSTRUCTOR POR DEFECTO" << "\n";
+    std::cout<< "CONSTRUCTOR POR DEFECTO MATRIZ" << "\n";
 }
 
 template <typename T>
