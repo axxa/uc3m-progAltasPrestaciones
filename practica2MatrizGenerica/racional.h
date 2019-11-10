@@ -67,7 +67,6 @@ racional<T> & racional<T>::operator+(const racional<T> & r)
 template <typename T>
 racional<T> & racional<T>::operator*(const racional<T> & r)
 {
-    std::cout<< "multi\n";
     int den3 = denominador * r.denominador;
     int num3 = numerador * r.numerador;
 
