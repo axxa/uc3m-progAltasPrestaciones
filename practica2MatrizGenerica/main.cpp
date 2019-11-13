@@ -5,7 +5,7 @@
 #include <chrono>
 using namespace std;
 
-int n = 1000;
+int n = 10;
 
 void evaluacionRacional(){
 
@@ -17,11 +17,10 @@ void evaluacionRacional(){
 
     std::random_device rd{};
     std::mt19937 gen{rd()};
-    std::normal_distribution<> dis(2, 1);
+    std::normal_distribution<> dis(2.5, 5);
 
     for (int i = 0; i < a.getSize(); ++i) {
         racional<int> r{static_cast<int>(dis(gen)),static_cast<int>(dis(gen))};
-        cout << r << "\n";
         a.set( i , r );
         b.set( i , r );
         c.set( i , r );
@@ -35,12 +34,7 @@ void evaluacionRacional(){
     chrono::duration<double> diff = end-start;
 
     cout << "Tiempo de cálculo de la matriz D = " << diff.count() << endl;
-
-    for (int i = 0; i < d.getSize(); ++i) {
-        s = s + d.get(i);
-    }
-
-    s = s/(d.getSize());
+    s = d.diagonalSum();
 
     cout << "\n" << "s = " << s << "\n";
 
@@ -48,11 +42,11 @@ void evaluacionRacional(){
 
 void evaluacion(){
 
-    matrix<float> a{n,n};
-    matrix<float> b{n,n};
-    matrix<float> c{n,n};
-    matrix<float> d{n,n};
-    float s = 0;
+    matrix<long double> a{n,n};
+    matrix<long double> b{n,n};
+    matrix<long double> c{n,n};
+    matrix<long double> d{n,n};
+    long double s = 0;
 
     std::random_device rd{};
     std::mt19937 gen{rd()};
@@ -70,11 +64,7 @@ void evaluacion(){
 
     cout << "Tiempo de cálculo de la matriz D = " << diff.count() << endl;
 
-    for (int i = 0; i < d.getSize(); ++i) {
-        s = s + d.get(i);
-    }
-
-    s = s/(d.getSize());
+    s = d.diagonalSum();
 
     cout << "\n" << "s = " << s << "\n";
 
