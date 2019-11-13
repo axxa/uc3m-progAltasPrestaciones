@@ -105,6 +105,10 @@ racional<T>::racional(int numeradorP, int denominadorP) :
         denominador{(denominadorP==0)?(1):denominadorP}
 
 {
+    if(numeradorP < 0)
+        numerador = numeradorP * (-1);
+    if(denominadorP < 0)
+        denominador = denominadorP * (-1);
     //std::cout<< "CONSTRUCTOR POR DEFECTO RACIONAL" << "\n";
 }
 
