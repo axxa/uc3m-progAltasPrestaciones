@@ -60,6 +60,7 @@ class matrix {
         T get(int pos) const { return buffer_[pos]; }
         void set(int i, int j, T x) { buffer_[i * cols_ + j] = x; }
         void set(int pos, T x) { buffer_[pos] = x; }
+        T diagonalSum();
 
     private:
         int rows_;
@@ -194,6 +195,21 @@ matrix<T> & matrix<T>::operator*(const matrix<T> & m)
 
     return *this;
 
+}
+
+template <typename T>
+T matrix<T>::diagonalSum()
+{
+    T sum{};
+    for (int i = 0; i < getCols(); i++) {
+        for (int j = 0; j < getRows(); j++) {
+            // Condition for principal diagonal
+            if (i == j)
+                sum = sum + this->get(i,j);
+
+        }
+    }
+    return sum;
 }
 
 template <typename T>
