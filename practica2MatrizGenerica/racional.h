@@ -6,7 +6,7 @@ template <typename T>
 //template <typename T, unsigned int N>
 class racional {
     //Evita que sean enteros sin signo
-    //static_assert(std::is_base_of<unsigned int, T>::value, "T must extend int");
+    //static_assert(std::is_base_of< T, int>::value, "T must extend int");
     //Evita que no sean tipos enteros
 
     public:
@@ -105,10 +105,6 @@ racional<T>::racional(int numeradorP, int denominadorP) :
         denominador{(denominadorP==0)?(1):denominadorP}
 
 {
-    if(numeradorP < 0)
-        numerador = numeradorP * (-1);
-    if(denominadorP < 0)
-        denominador = denominadorP * (-1);
     //std::cout<< "CONSTRUCTOR POR DEFECTO RACIONAL" << "\n";
 }
 
